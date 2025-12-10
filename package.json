@@ -9,12 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^2.0.80",
+    "@mozilla/readability": "^0.6.0",
+    "ai": "^5.0.108",
+    "jsdom": "^27.0.1",
     "next": "16.0.8",
     "react": "19.2.1",
     "react-dom": "19.2.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/jsdom": "^27.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
