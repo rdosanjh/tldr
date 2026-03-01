@@ -1,5 +1,5 @@
 import { Readability } from '@mozilla/readability';
-import { JSDOM } from 'jsdom';
+import { parseHTML } from 'linkedom';
 import { ArticleContent } from './types';
 
 export async function extractArticle(url: string): Promise<ArticleContent | null> {
@@ -14,8 +14,8 @@ export async function extractArticle(url: string): Promise<ArticleContent | null
   }
 
   const html = await response.text();
-  const dom = new JSDOM(html, { url });
-  const reader = new Readability(dom.window.document);
+  const { document } = parseHTML(html);
+  const reader = new Readability(document);
   const article = reader.parse();
 
   if (!article) {
