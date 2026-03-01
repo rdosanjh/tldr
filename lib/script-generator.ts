@@ -32,7 +32,7 @@ Create an engaging podcast script that captures the key points and makes them ac
     model: openai('gpt-4o'),
     system: SCRIPT_SYSTEM_PROMPT,
     prompt: userPrompt,
-    maxTokens: 4000,
+    maxOutputTokens: 4000,
   });
 
   const wordCount = text.split(/\s+/).length;

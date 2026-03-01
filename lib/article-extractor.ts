@@ -23,12 +23,12 @@ export async function extractArticle(url: string): Promise<ArticleContent | null
   }
 
   return {
-    title: article.title,
-    content: article.content,
-    textContent: article.textContent,
-    byline: article.byline,
-    excerpt: article.excerpt,
-    siteName: article.siteName,
-    length: article.length,
+    title: article.title ?? 'Untitled',
+    content: article.content ?? '',
+    textContent: article.textContent ?? '',
+    byline: article.byline ?? null,
+    excerpt: article.excerpt ?? null,
+    siteName: article.siteName ?? null,
+    length: article.length ?? 0,
   };
 }
