@@ -3,8 +3,6 @@ import { auth } from '@clerk/nextjs/server';
 import { extractArticle } from '@/lib/article-extractor';
 import { generatePodcastScript } from '@/lib/script-generator';
 import { generateAudio } from '@/lib/speech-generator';
-import { Polar } from "@polar-sh/sdk";
-
 export const maxDuration = 60;
 
 function isValidUrl(string: string): boolean {
@@ -24,22 +22,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-
-    const polar = new Polar({
-      accessToken: process.env["POLAR_ACCESS_TOKEN"] ?? "",
-    });
-
-    await polar.events.ingest({
-      events: [
-        {
-          name: "Podcast Generated",
-          externalCustomerId: "raj",
-          metadata: {
-            key: "value",
-          },
-        },
-      ],
-    });
 
     const { url, voice = 'alloy', model = 'tts-1' } = await request.json();
 

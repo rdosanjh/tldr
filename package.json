@@ -12,7 +12,6 @@
     "@ai-sdk/openai": "^2.0.80",
     "@clerk/nextjs": "^6.36.1",
     "@mozilla/readability": "^0.6.0",
-    "@polar-sh/nextjs": "^0.9.3",
     "ai": "^5.0.108",
     "linkedom": "^0.18.12",
     "next": "16.0.8",
